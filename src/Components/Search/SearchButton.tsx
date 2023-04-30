@@ -12,4 +12,9 @@ export const SearchButton = styled.button`
     height: 32px;
     width: 30px;
     border-radius: 0px;
+    position: relative;
+
+    &:active {
+        background-color: ${colors.secundaryButtonActive};
+    }
 `

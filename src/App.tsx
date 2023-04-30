@@ -1,14 +1,12 @@
-import SearchComponent from "./Components/Search/SearchComponent";
+import HeaderComponent from "./Components/Header/HeaderComponent";
+import { HomeScreen } from "./Screens/HomeScreen";
 
 function App() {
-  const handleSearch = (searchTerm: string) => {
-    console.log('Searching for:', searchTerm);
-    // Aquí iría la lógica para realizar la búsqueda
-  };
 
   return (
     <>
-      <SearchComponent onSearch={handleSearch} />
+      <HeaderComponent/>
+      <HomeScreen />
     </>
   );
 }
