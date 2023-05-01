@@ -1,29 +1,36 @@
-import React from 'react';
-import useSearch from '../../Hooks/useSearch';
+import { useSearch } from '../../Hooks/useSearch';
 import { SearchButton } from './SearchButton'
 import { SearchInput } from './SearchInput';
 import { SearchForm } from './SearchForm';
 import { LogoImg } from '../Header/LogoImg';
-import logo from '../../assets/Logo_ML.png';
+import logo from '../../Assets/Logo_ML.png';
+import Messages from '../../Interfaces/Messages';
+import uiTexts from '../../localization/uiTexts';
+import config from '../../config';
+import { useNavigate } from 'react-router-dom';
 
+const SearchComponent = () => {
+  const { searchTerm, handleInputChange } = useSearch();
 
-interface Props {
-  onSearch: (searchTerm: string) => void;
-}
+  const message: Messages[string] = uiTexts[config.defaultLanguage];
 
-const SearchComponent: React.FC<Props> = ({ onSearch }) => {
-  const { searchTerm, handleInputChange, handleSearch } = useSearch(onSearch);
+  const navigate = useNavigate();
+
+  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate(`/items/search/${searchTerm}`);
+  }
 
   return (
     <SearchForm onSubmit={handleSearch}>
       <LogoImg src={logo} ></LogoImg>
       <SearchInput
         type="text"
-        placeholder="Nunca dejes de buscar"
+        placeholder={message.searchPlaceHolder}
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <SearchButton type="submit"></SearchButton>
+      <SearchButton type='submit'></SearchButton>
     </SearchForm>
   );
 };
