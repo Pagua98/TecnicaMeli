@@ -3,8 +3,11 @@ const colors = {
     secundaryButton: '#EAEAEA',
     secundaryButtonActive: '#c7c7c7',
     primaryText: '##282828',
-    backgroundColor: '#FFFFFF',
-    topBar: '#FEE409'
+    backgroundColorComponent: '#FFFFFF',
+    backgroundColor: '#EAEAEA',
+    topBar: '#FEE409',
+    line: '#F0F0F0',
+    cityText: '#686868',
 }
 
 export default colors;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import colors from '../../Styles/colors';
 
 export const SearchInput = styled.input`
-    background-color: ${colors.backgroundColor};
+    background-color: ${colors.backgroundColorComponent};
     color: ${colors.primaryText};
     border: 0px;
     height: 30px;

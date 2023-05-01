@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import SearchIcon from '../../assets/ic_Search.png';
+import SearchIcon from '../../Assets/ic_Search.png';
 import colors from '../../Styles/colors';
 
 export const SearchButton = styled.button`
@@ -13,6 +13,7 @@ export const SearchButton = styled.button`
     width: 30px;
     border-radius: 0px;
     position: relative;
+    cursor: pointer;
 
     &:active {
         background-color: ${colors.secundaryButtonActive};
