@@ -1,15 +1,24 @@
 import { useState } from "react";
-import { Products } from "../Interfaces/SearchResult";
+import { Products } from "../Types/SearchResult";
 import api from "../Utils/api";
 
 export function useProduct() {
 
     const [products, setProduct] = useState<Products[]>([])
+    const [selectedProduct, setSelectedProduct] = useState<Products>()
 
     const search = async (param: string) => {
         if (param !== '') {
             const response = await api.searchProduct(param);
             updateProduct(response.results);
+        }
+    };
+
+    const getProductById = async (param: string) => {
+        if (param !== '') {
+            const response = await api.getProductById(param);
+            console.log(response);
+            setSelectedProduct(response);
         }
     };
 
@@ -23,8 +32,11 @@ export function useProduct() {
 
     return {
         search,
+        getProductById,
+        addThousandSeparators,
+
         products,
-        addThousandSeparators
+        selectedProduct
     };
 }
 

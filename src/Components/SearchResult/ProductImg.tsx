@@ -10,7 +10,7 @@ const ImageLink = styled.a<ImageLinkProps>`
   display: inline-block;
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
-  cursor: pointer;
+  cursor: pointer;  
 `;
 
 type ImgProps = {

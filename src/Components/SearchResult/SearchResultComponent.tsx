@@ -29,7 +29,7 @@ export const SearchResultComponent = () => {
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} 
                                 parsedCurrency={message[`${product.currency_id}`]} 
-                                parsedPrice={addThousandSeparators(product.price)}/>
+                                parsedAmount={addThousandSeparators(product.price)}/>
                 ))}
             </Component>
         </Content>

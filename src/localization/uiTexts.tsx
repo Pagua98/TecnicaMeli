@@ -2,12 +2,19 @@ import Messages from '../Interfaces/Messages';
 
 const uiTexts: Messages = {
     es: {
-        //#region Header
 
+        //#region Header
         searchPlaceHolder: "Nunca dejes de buscar",
-        USD: "U$S",
-        UYU: "$"
         //#endregion Header
+
+        //#region Products
+        USD: "U$S",
+        UYU: "$",
+        new: "Nuevo",
+        sold_quantity: "vendidos",
+        descriptionTitle: "Descripción del producto",
+        buyBtnTitle: "Comprar",
+        //#endregion Products
     }
 };
 

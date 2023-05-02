@@ -1,4 +1,4 @@
-import { Products, SearchResult } from '../Interfaces/SearchResult';
+import { Products, SearchResult } from '../Types/SearchResult';
 import config from '../config';
 
 const searchProduct = async (searchTerm: string): Promise<SearchResult> => {

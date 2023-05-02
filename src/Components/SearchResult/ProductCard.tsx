@@ -4,6 +4,7 @@ import { ProductDescription } from './ProductDescription';
 import { LineSeparator } from '../Body/LineSeparator';
 import { CardProps } from '../../Types/CardProps';
 import colors from '../../Styles/colors';
+import { ProductAmount } from '../Products/ProductAmount';
 
 const Card = styled.div<CardProps>`
     padding: 20px;
@@ -47,14 +48,14 @@ const SellerCity = styled.span`
   font-size: 12px
 `;
 
-export const ProductCard = ({ product, parsedCurrency, parsedPrice} : CardProps) => {
+export const ProductCard = ({ product, parsedCurrency, parsedAmount} : CardProps) => {
   return (
     <>
-    <Card product={product} parsedCurrency={parsedCurrency} parsedPrice={parsedPrice}>
+    <Card product={product} parsedCurrency={parsedCurrency} parsedAmount={parsedAmount}>
       <CardDetails>
-        <ProductImg src={product.thumbnail} alt={product.title} href={`/items/:${product.id}`} />
+        <ProductImg src={product.thumbnail} alt={product.title} href={`/items/${product.id}`} />
         <CardDescription>
-          <ProductPrice>{parsedCurrency} {parsedPrice}</ProductPrice>
+          <ProductAmount parsedAmount={parsedAmount} parsedCurrency={parsedCurrency}/>
           <ProductDescription> {product.title} </ProductDescription>
         </CardDescription>
         <SellerContainer>

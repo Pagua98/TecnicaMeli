@@ -3,7 +3,7 @@ import SearchIcon from '../../Assets/ic_Search.png';
 import colors from '../../Styles/colors';
 
 export const SearchButton = styled.button`
-    background-color: ${colors.secundaryButton};
+    background-color: ${colors.secundaryBtn};
     color: ${colors.primaryText};
     border: 0px;
     background-image: url(${SearchIcon});
