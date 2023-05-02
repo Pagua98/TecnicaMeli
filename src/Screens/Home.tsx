@@ -1,4 +1,5 @@
-import { Content } from "../Components/Body/Content";
+import { Content } from "../Components/Body/styles";
+
 
 export const Home = () => {
 

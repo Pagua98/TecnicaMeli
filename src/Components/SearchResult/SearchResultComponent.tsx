@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { Content } from "../Body/Content";
-import { Component } from "../Body/Component";
 import { useParams } from "react-router-dom";
 import { useProduct } from "../../Hooks/useProducts";
 import Messages from "../../Interfaces/Messages";
 import uiTexts from "../../localization/uiTexts";
 import config from "../../config";
 import { ProductCard } from "./ProductCard";
+import { Component, 
+         Content } from "../Body/styles";
 
 export const SearchResultComponent = () => {
 
@@ -21,7 +21,6 @@ export const SearchResultComponent = () => {
             search(term)
         }
     }, [searchTerm])
-
 
     return (
         <Content>

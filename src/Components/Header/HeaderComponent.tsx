@@ -1,5 +1,6 @@
-import { HeaderBar } from './HeaderBar';
+
 import SearchComponent from "../Search/SearchComponent";
+import { HeaderBar } from "./styles";
 
 const HeaderComponent = () => {
 
