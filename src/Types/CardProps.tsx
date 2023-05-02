@@ -1,8 +1,8 @@
-import { Products } from "../Interfaces/SearchResult";
+import { Products } from "./SearchResult";
 
 export type CardProps = {
     product: Products;
     parsedCurrency: string;
-    parsedPrice: string;
+    parsedAmount: string;
 };
 

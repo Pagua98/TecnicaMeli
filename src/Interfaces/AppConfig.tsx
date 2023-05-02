@@ -1,5 +1,6 @@
 interface AppConfig {
     defaultLanguage: string;
+    localeCode: string;
     supportedLanguages: string[];
     maxSearchResults: number;
     apiUrl: string;

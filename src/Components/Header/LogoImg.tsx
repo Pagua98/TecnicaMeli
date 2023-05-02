@@ -1,7 +1,13 @@
-import styled from 'styled-components';
+import { Img } from "./styles";
 
-export const LogoImg = styled.img
-`
-    margin: 2px 2vh 0 0;
-    height: 30px;
-`;
+type ImgProps = {
+    src: string
+};
+
+export const LogoImg: React.FC<ImgProps> = ({ src }) => {
+    return (
+        <a href='/'>
+            <Img src={src}/>
+        </a>
+    );
+}

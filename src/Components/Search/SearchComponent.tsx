@@ -1,13 +1,13 @@
 import { useSearch } from '../../Hooks/useSearch';
-import { SearchButton } from './SearchButton'
-import { SearchInput } from './SearchInput';
-import { SearchForm } from './SearchForm';
 import { LogoImg } from '../Header/LogoImg';
 import logo from '../../Assets/Logo_ML.png';
 import Messages from '../../Interfaces/Messages';
 import uiTexts from '../../localization/uiTexts';
 import config from '../../config';
 import { useNavigate } from 'react-router-dom';
+import { SearchForm, 
+         SearchInput, 
+         SearchButton } from './styles';
 
 const SearchComponent = () => {
   const { searchTerm, handleInputChange } = useSearch();

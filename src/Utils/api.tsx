@@ -1,4 +1,5 @@
-import { Products, SearchResult } from '../Interfaces/SearchResult';
+import { Description, ProductDetails } from '../Types/ProductDetails';
+import { Products, SearchResult } from '../Types/SearchResult';
 import config from '../config';
 
 const searchProduct = async (searchTerm: string): Promise<SearchResult> => {
@@ -10,7 +11,7 @@ const searchProduct = async (searchTerm: string): Promise<SearchResult> => {
   }
 };
 
-const getProductById = async (productId: string): Promise<Products> => {
+const getProductById = async (productId: string): Promise<ProductDetails> => {
   try {
     const response = await fetch(`${config.apiUrl}${config.productEndpoint}${productId}`);
     return await response.json();
@@ -19,7 +20,17 @@ const getProductById = async (productId: string): Promise<Products> => {
   }
 };
 
+const getProductDescription = async (productId: string): Promise<Description> => {
+  try {
+    const response = await fetch(`${config.apiUrl}${config.productEndpoint}${productId}/description`);
+    return await response.json();
+  } catch (error) {
+    throw new Error('Ha ocurrido un error en la consulta');
+  }
+};
+
 export default {
   searchProduct,
-  getProductById
+  getProductById,
+  getProductDescription
 };
