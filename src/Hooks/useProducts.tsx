@@ -2,17 +2,20 @@ import { useState } from "react";
 import { Products } from "../Types/SearchResult";
 import api from "../Utils/api";
 import config from "../config";
-import { Description, ProductDetails } from "../Types/ProductDetails";
+import { ProductDetails } from "../Types/ProductDetails";
+import { Filter } from "../Types/Breadcrum";
 
 export function useProduct() {
 
     const [products, setProduct] = useState<Products[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<ProductDetails>();
     const [productDescription, setProductDescription] = useState<string>('');
+    const [filters, setFilters] = useState<Filter[]>([]);
 
     const search = async (param: string) => {
         if (param !== '') {
             const response = await api.searchProduct(param);
+            await updateFilters(response.filters);
             updateProduct(response.results);
         }
     };
@@ -20,17 +23,27 @@ export function useProduct() {
     const getProductById = async (param: string) => {
         if (param !== '') {
             const response = await api.getProductById(param);
+            await setSelectedProduct(response);
             await getProductDescription(param);
-            setSelectedProduct(response);
+            await getCategories();
         }
     };
 
     const getProductDescription = async (param: string) => {
         if (param !== '') {
             const response = await api.getProductDescription(param);
-            setProductDescription(response.plain_text);
+            await setProductDescription(response.plain_text);
         }
     };
+
+    const getCategories = async () => {
+            const response = await api.getProductCategories();
+            await updateFilters(response);
+    }
+
+    const updateFilters = async (param: Filter[]) => {
+        setFilters(param);
+    }
 
     const updateProduct = async (list: Products[]) => {
         setProduct(list);
@@ -49,7 +62,8 @@ export function useProduct() {
 
         products,
         selectedProduct,
-        productDescription
+        productDescription,
+        filters
     };
 }
 

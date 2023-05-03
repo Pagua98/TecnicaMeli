@@ -5,4 +5,3 @@ export type CardProps = {
     parsedCurrency: string;
     parsedAmount: string;
 };
-

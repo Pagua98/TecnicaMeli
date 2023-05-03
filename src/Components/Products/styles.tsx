@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../Styles/colors';
+import { RedirectProps } from '../../Types/RedirectProps';
 
 export const Container = styled.div`
     margin: 25px 100px 30px 30px;
@@ -20,6 +21,7 @@ export const ContainerAmount = styled.a`
     font-weight: 400;
     text-decoration: none;
     color: ${colors.primaryText};
+    curson: pointer;
 `;
 
 export const CurrencyAmount = styled.span`

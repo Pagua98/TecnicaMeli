@@ -5,9 +5,11 @@ const config: AppConfig = {
   localeCode: "es-UY",
   supportedLanguages: ["es"],
   maxSearchResults: 4,
-  apiUrl: "https://api.mercadolibre.com/",
-  searchEndpoint: "sites/MLU/search?q=",
-  productEndpoint: "items/"
+  apiUrl: "http://localhost:9000/api/v1/",
+  searchApiEndpoint: "items/search/",
+  productDetailApiEndpoint: "items/",
+  productDescriptionApiEndpoint: "items/description/",
+  productCategoriesApiEndpoint: "items/getCategories/",
 };
 
 export default config;
