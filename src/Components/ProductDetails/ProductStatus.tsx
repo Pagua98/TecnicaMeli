@@ -10,10 +10,12 @@ const parseText = (condition: string, quantity: number): string => {
     return message[condition] + " - " + quantity + " " + message["sold_quantity"];
 }
 
-export const ProductStatus: React.FC<DetailProps> = ({ condition, soldQuantity }) => {
+const ProductStatus: React.FC<DetailProps> = ({ condition, soldQuantity }) => {
     return (
         <Container>
             <ProductDetail>{parseText(condition, soldQuantity)}</ProductDetail>
         </Container>
     );
 };
+
+export default ProductStatus;

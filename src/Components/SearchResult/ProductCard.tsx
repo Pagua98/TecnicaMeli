@@ -1,12 +1,12 @@
-import { ProductImg } from './ProductImg';
+import ProductImg from './ProductImg';
 import { CardProps } from '../../Types/CardProps';
-import { ProductAmount } from '../Products/ProductAmount';
+import ProductAmount from '../Products/ProductAmount';
 import ic_shipping from '../../Assets/ic_shipping.png'
 import { AmountContainer, Card, CardDescription, CardDetails, ProductDescription, SellerCity, SellerContainer, ShippingImg } from './styles';
 import { LineSeparator } from '../Body/styles';
 
+const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmount }) => {
 
-export const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmount }) => {
   return (
     <>
       <Card product={product} parsedCurrency={parsedCurrency} parsedAmount={parsedAmount}>
@@ -32,3 +32,5 @@ export const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, pars
     </>
   );
 };
+
+export default ProductCard;

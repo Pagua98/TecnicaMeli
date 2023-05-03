@@ -1,4 +1,4 @@
-import { ProductStatus } from './ProductStatus';
+import ProductStatus from './ProductStatus';
 import ProductDetailAmount from '../Products/ProductDetailAmount';
 import { BuyButton, 
         Description, 
@@ -11,7 +11,7 @@ import { BuyButton,
         RightContainer } from './styles';
 import { ProductDetailsProps } from '../../Types/ProductDetailsProps';
 
-export const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, parsedAmount, messages, productDescription }) => {
+const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, parsedAmount, messages, productDescription }) => {
     return (
         <>
             <DetailContainer>
@@ -32,3 +32,5 @@ export const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedPr
         </>
     );
 };
+
+export default SectionProductDetail;

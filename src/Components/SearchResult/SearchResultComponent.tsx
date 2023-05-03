@@ -4,26 +4,27 @@ import { useProduct } from "../../Hooks/useProducts";
 import Messages from "../../Interfaces/Messages";
 import uiTexts from "../../localization/uiTexts";
 import config from "../../config";
-import { ProductCard } from "./ProductCard";
+import ProductCard from "./ProductCard";
 import { Component, 
          Content } from "../Body/styles";
+import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 
-export const SearchResultComponent = () => {
+const SearchResultComponent = () => {
 
     const { searchTerm } = useParams();
-    const { search, products, addThousandSeparators } = useProduct();
+    const { search, products, filters, addThousandSeparators } = useProduct();
 
     const message: Messages[string] = uiTexts[config.defaultLanguage];
 
     useEffect(() => {
-        const term: string = searchTerm ? searchTerm : "";
-        if(term !== ""){
-            search(term)
+        if (searchTerm) {
+            search(searchTerm);
         }
     }, [searchTerm])
 
     return (
         <Content>
+            <BreadcrumComponent filters={filters}></BreadcrumComponent>
             <Component>
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} 
@@ -34,3 +35,5 @@ export const SearchResultComponent = () => {
         </Content>
     );
 };
+
+export default SearchResultComponent;

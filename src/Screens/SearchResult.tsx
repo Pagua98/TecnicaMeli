@@ -1,11 +1,12 @@
-import { SearchResultComponent } from '../Components/SearchResult/SearchResultComponent'
+import SearchResultComponent from '../Components/SearchResult/SearchResultComponent'
 
-export const SearchResult = () => {
+const SearchResult = () => {
 
     return (
         <>  
-            <div>hola</div>
             <SearchResultComponent />
         </>
     );
 };
+
+export default SearchResult;

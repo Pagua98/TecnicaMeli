@@ -4,8 +4,10 @@ interface AppConfig {
     supportedLanguages: string[];
     maxSearchResults: number;
     apiUrl: string;
-    searchEndpoint: string;
-    productEndpoint: string;
+    searchApiEndpoint: string;
+    productDetailApiEndpoint: string;
+    productDescriptionApiEndpoint: string;
+    productCategoriesApiEndpoint: string;
 }
 
 export default AppConfig;

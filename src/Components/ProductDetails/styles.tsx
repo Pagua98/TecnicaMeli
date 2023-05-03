@@ -59,7 +59,7 @@ export const RightContainer = styled.div`
 `;
 
 export const ProductTitle = styled.div`
-    margin: 10px 10px 0 30px;
+    margin: 10px 30px 0 30px;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.4em;

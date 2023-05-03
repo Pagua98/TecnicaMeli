@@ -4,6 +4,7 @@ const colors = {
     secundaryButtonActive: '#c7c7c7',
     primaryText: '#282828',
     secundaryText: '#4C4C4C',
+    breadcrumText: '#AFB2B3',
     backgroundColorComponent: '#FFFFFF',
     backgroundColor: '#EAEAEA',
     topBar: '#FEE409',

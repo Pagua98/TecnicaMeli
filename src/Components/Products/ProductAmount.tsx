@@ -1,7 +1,7 @@
 import { ProductAmountProps } from '../../Types/ProductAmountProps';
 import { Amount, ContainerAmount, CurrencyAmount } from './styles';
 
-export const ProductAmount: React.FC<ProductAmountProps> = ({  parsedAmount, parsedCurrency, href }) => {
+const ProductAmount: React.FC<ProductAmountProps> = ({  parsedAmount, parsedCurrency, href }) => {
     return (
         <ContainerAmount href={href}>
             <CurrencyAmount> { parsedCurrency } </CurrencyAmount>
@@ -10,3 +10,5 @@ export const ProductAmount: React.FC<ProductAmountProps> = ({  parsedAmount, par
 
     );
 };
+
+export default ProductAmount; 

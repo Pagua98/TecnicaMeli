@@ -1,11 +1,11 @@
 import { Content } from "../Components/Body/styles";
 
-
-export const Home = () => {
+const Home = () => {
 
     return (
         <Content>
         </Content>
-
     );
 };
+
+export default Home;

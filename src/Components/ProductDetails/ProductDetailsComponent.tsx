@@ -4,13 +4,14 @@ import { useProduct } from "../../Hooks/useProducts";
 import Messages from "../../Interfaces/Messages";
 import uiTexts from "../../localization/uiTexts";
 import config from "../../config";
-import { SectionProductDetail } from "./SectionProductDetail";
+import SectionProductDetail from "./SectionProductDetail";
 import { Component, Content } from "../Body/styles";
+import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 
-export const ProductDetailsComponent = () => {
+const ProductDetailsComponent = () => {
 
   const { id } = useParams();
-  const { getProductById, selectedProduct, productDescription, addThousandSeparators } = useProduct();
+  const { getProductById, selectedProduct, productDescription, addThousandSeparators, filters } = useProduct();
 
   const message: Messages[string] = uiTexts[config.defaultLanguage];
 
@@ -19,10 +20,11 @@ export const ProductDetailsComponent = () => {
     if (term !== "") {
       getProductById(term)
     }
-  }, [id])
+  }, [])
 
   return (
     <Content>
+        <BreadcrumComponent filters={filters}/>
       <Component>
         {selectedProduct && (
             <SectionProductDetail selectedProduct={selectedProduct}
@@ -35,3 +37,4 @@ export const ProductDetailsComponent = () => {
   );
 };
 
+export default ProductDetailsComponent;

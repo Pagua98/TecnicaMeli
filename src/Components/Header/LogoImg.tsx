@@ -4,10 +4,12 @@ type ImgProps = {
     src: string
 };
 
-export const LogoImg: React.FC<ImgProps> = ({ src }) => {
+const LogoImg: React.FC<ImgProps> = ({ src }) => {
     return (
         <a href='/'>
             <Img src={src}/>
         </a>
     );
 }
+
+export default LogoImg;

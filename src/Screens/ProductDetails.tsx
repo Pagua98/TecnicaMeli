@@ -1,8 +1,10 @@
-import { ProductDetailsComponent } from '../Components/ProductDetails/ProductDetailsComponent';
+import ProductDetailsComponent from '../Components/ProductDetails/ProductDetailsComponent';
 
-export const ProductDetails = () => {
+const ProductDetails = () => {
 
     return (
         <ProductDetailsComponent />
     );
 };
+
+export default ProductDetails;

@@ -1,5 +1,5 @@
 import { useSearch } from '../../Hooks/useSearch';
-import { LogoImg } from '../Header/LogoImg';
+import LogoImg from '../Header/LogoImg';
 import logo from '../../Assets/Logo_ML.png';
 import Messages from '../../Interfaces/Messages';
 import uiTexts from '../../localization/uiTexts';
