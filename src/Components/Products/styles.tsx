@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import colors from '../../Styles/colors';
-import { RedirectProps } from '../../Types/RedirectProps';
 
 export const Container = styled.div`
     margin: 25px 100px 30px 30px;
@@ -27,8 +26,16 @@ export const ContainerAmount = styled.a`
 export const CurrencyAmount = styled.span`
     margin: 0 4px 0 0;
     font-size: 25px;
+    @media (max-width: 768px) {
+        font-weight: 350;
+        font-size: 18px;
+    }
 `;
 
 export const Amount = styled.span`
     font-size: 25px;
+    @media (max-width: 768px) {
+        font-weight: 350;
+        font-size: 18px;
+    }
 `;

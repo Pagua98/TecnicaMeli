@@ -17,7 +17,7 @@ const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmoun
               <ProductAmount parsedAmount={parsedAmount} parsedCurrency={parsedCurrency} href={`/items/${product.id}`} />
               {product.shipping.free_shipping ? (
                 <span >
-                  <ShippingImg style={{ }} src={ic_shipping} />
+                  <ShippingImg style={{}} src={ic_shipping} />
                 </span>
               ) : null}
             </AmountContainer>
