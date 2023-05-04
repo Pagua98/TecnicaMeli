@@ -65,7 +65,8 @@ const productDetailsMap = async (response, description, categoryList) => {
         title: response.title,
         price: {
             amount: response.price,
-            currency: response.currency_id
+            currency: response.currency_id,
+            decimals: await getDecimalFromPrice(response.price)
         },
         picture: response.pictures[0].url,
         condition: response.condition,
@@ -73,6 +74,7 @@ const productDetailsMap = async (response, description, categoryList) => {
         address_city_name: response.seller_address.city.name,
         sold_quantity: response.sold_quantity,
         description: description,
+        categories: searchResult.categories
     };
     searchResult.product.push(product);
 

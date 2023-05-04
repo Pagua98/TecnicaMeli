@@ -5,5 +5,6 @@ export type ProductDetailsProps = {
     selectedProduct: Products,
     productDescription: string
     parsedAmount: string,
+    decimals: number,
     messages: Messages[string]
 };

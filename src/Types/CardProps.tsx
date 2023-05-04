@@ -4,4 +4,5 @@ export type CardProps = {
     product: Products;
     parsedCurrency: string;
     parsedAmount: string;
+    decimals: number;
 };

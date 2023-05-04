@@ -12,7 +12,7 @@ import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 const SearchResultComponent = () => {
 
     const { searchTerm } = useParams();
-    const { search, products, categories, addThousandSeparators } = useProduct();
+    const { search, products, categories, addThousandSeparators, getDecimalPrice } = useProduct();
 
     const message: Messages[string] = uiTexts[config.defaultLanguage];
 
@@ -29,7 +29,8 @@ const SearchResultComponent = () => {
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} 
                                 parsedCurrency={message[`${product.price.currency}`]} 
-                                parsedAmount={addThousandSeparators(product.price.amount)}/>
+                                parsedAmount={addThousandSeparators(product.price.amount)}
+                                decimals={getDecimalPrice(product.price.decimals)}/>
                 ))}
             </Component>
         </Content>

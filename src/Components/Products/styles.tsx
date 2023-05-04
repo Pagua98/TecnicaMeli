@@ -34,8 +34,19 @@ export const CurrencyAmount = styled.span`
 
 export const Amount = styled.span`
     font-size: 25px;
+    display: inline-block;
     @media (max-width: 768px) {
         font-weight: 350;
         font-size: 18px;
+    }
+`;
+
+export const Decimals = styled.span`
+    font-size: 17px;
+    display: inline-block;
+    vertical-align: top;
+    @media (max-width: 768px) {
+        font-weight: 350;
+        font-size: 15px;
     }
 `;

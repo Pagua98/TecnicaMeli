@@ -27,12 +27,13 @@ export type Products = {
     address_city_name: string;
     sold_quantity: number;
     description: Description;
+    categories: Category[];
 }
 
 export type Price = {
     currency: string;
     amount: number;
-    decimal: number;
+    decimals: number;
 }
 
 export type Description = {
