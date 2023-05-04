@@ -5,7 +5,7 @@ const { getProducts, getProductById, getProductDescription, getProductsFilters }
 router
     .get("/items/search/:term", getProducts)
     .get("/items/:term", getProductById)
-    .get("/items/description/:term", getProductDescription)
-    .get("/items/getCategories/:term", getProductsFilters)
+    // .get("/items/description/:term", getProductDescription)
+    // .get("/items/getCategories/:term", getProductsFilters)
 
 module.exports = router;

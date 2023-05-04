@@ -1,8 +1,8 @@
 import Messages from "../Interfaces/Messages";
-import { ProductDetails } from "./ProductDetails";
+import { Products } from "./SearchResult";
 
 export type ProductDetailsProps = {
-    selectedProduct: ProductDetails,
+    selectedProduct: Products,
     productDescription: string
     parsedAmount: string,
     messages: Messages[string]
