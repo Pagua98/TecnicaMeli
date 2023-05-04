@@ -11,7 +11,7 @@ import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 const ProductDetailsComponent = () => {
 
   const { id } = useParams();
-  const { getProductById, selectedProduct, productDescription, addThousandSeparators, filters } = useProduct();
+  const { getProductById, selectedProduct, productDescription, addThousandSeparators, categories } = useProduct();
 
   const message: Messages[string] = uiTexts[config.defaultLanguage];
 
@@ -24,11 +24,11 @@ const ProductDetailsComponent = () => {
 
   return (
     <Content>
-        <BreadcrumComponent filters={filters}/>
+        <BreadcrumComponent categories={categories}/>
       <Component>
         {selectedProduct && (
             <SectionProductDetail selectedProduct={selectedProduct}
-                            parsedAmount={addThousandSeparators(selectedProduct.price)}
+                            parsedAmount={addThousandSeparators(selectedProduct.price.amount)}
                             messages={message}
                             productDescription={productDescription}></SectionProductDetail>
         )}

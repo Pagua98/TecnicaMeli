@@ -11,6 +11,7 @@ const uiTexts: Messages = {
         USD: "U$S",
         UYU: "$",
         new: "Nuevo",
+        used: "Usado",
         sold_quantity: "vendidos",
         descriptionTitle: "Descripción del producto",
         buyBtnTitle: "Comprar",

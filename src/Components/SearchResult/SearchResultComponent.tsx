@@ -12,7 +12,7 @@ import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 const SearchResultComponent = () => {
 
     const { searchTerm } = useParams();
-    const { search, products, filters, addThousandSeparators } = useProduct();
+    const { search, products, categories, addThousandSeparators } = useProduct();
 
     const message: Messages[string] = uiTexts[config.defaultLanguage];
 
@@ -24,12 +24,12 @@ const SearchResultComponent = () => {
 
     return (
         <Content>
-            <BreadcrumComponent filters={filters}></BreadcrumComponent>
+            <BreadcrumComponent categories={categories}></BreadcrumComponent>
             <Component>
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} 
-                                parsedCurrency={message[`${product.currency_id}`]} 
-                                parsedAmount={addThousandSeparators(product.price)}/>
+                                parsedCurrency={message[`${product.price.currency}`]} 
+                                parsedAmount={addThousandSeparators(product.price.amount)}/>
                 ))}
             </Component>
         </Content>

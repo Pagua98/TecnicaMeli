@@ -16,12 +16,12 @@ const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, 
         <>
             <DetailContainer>
                 <LeftContainer>
-                    <ProductImg src={selectedProduct.pictures[0].url} alt={selectedProduct.title} />
+                    <ProductImg src={selectedProduct.picture} alt={selectedProduct.title} />
                 </LeftContainer>
                 <RightContainer>
                     <ProductStatus soldQuantity={selectedProduct.sold_quantity} condition={selectedProduct.condition}></ProductStatus>
                     <ProductTitle>{selectedProduct.title}</ProductTitle>
-                    <ProductDetailAmount parsedAmount={parsedAmount} parsedCurrency={messages[`${selectedProduct.currency_id}`]}></ProductDetailAmount>
+                    <ProductDetailAmount parsedAmount={parsedAmount} parsedCurrency={messages[`${selectedProduct.price.currency}`]}></ProductDetailAmount>
                     <BuyButton>{messages['buyBtnTitle']}</BuyButton>
                 </RightContainer>
             </DetailContainer>

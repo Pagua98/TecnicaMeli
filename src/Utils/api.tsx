@@ -1,6 +1,4 @@
-import { Filter } from '../Types/Breadcrum';
-import { Description, ProductDetails } from '../Types/ProductDetails';
-import { SearchResult } from '../Types/SearchResult';
+import { Category, Products, SearchDetailResult, SearchResult } from '../Types/SearchResult';
 import config from '../config';
 
 const searchProduct = async (searchTerm: string): Promise<SearchResult> => {
@@ -12,7 +10,7 @@ const searchProduct = async (searchTerm: string): Promise<SearchResult> => {
   }
 };
 
-const getProductById = async (productId: string): Promise<ProductDetails> => {
+const getProductById = async (productId: string): Promise<Products> => {
   try {
     const response = await fetch(`${config.apiUrl}${config.productDetailApiEndpoint}${productId}`);
     return await response.json();
@@ -21,7 +19,7 @@ const getProductById = async (productId: string): Promise<ProductDetails> => {
   }
 };
 
-const getProductDescription = async (productId: string): Promise<Description> => {
+const getProductDescription = async (productId: string): Promise<Products> => {
   try {
     const response = await fetch(`${config.apiUrl}${config.productDescriptionApiEndpoint}${productId}`);
     return await response.json();
@@ -30,7 +28,7 @@ const getProductDescription = async (productId: string): Promise<Description> =>
   }
 };
 
-const getProductCategories = async (): Promise<Filter[]> => {
+const getProductCategories = async (): Promise<Category[]> => {
   try {
     const response = await fetch(`${config.apiUrl}${config.productCategoriesApiEndpoint}terms`);
     return await response.json();

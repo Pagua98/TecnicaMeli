@@ -11,11 +11,11 @@ const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmoun
     <>
       <Card product={product} parsedCurrency={parsedCurrency} parsedAmount={parsedAmount}>
         <CardDetails>
-          <ProductImg src={product.thumbnail} alt={product.title} href={`/items/${product.id}`} />
+          <ProductImg src={product.picture} alt={product.title} href={`/items/${product.id}`} />
           <CardDescription>
             <AmountContainer>
               <ProductAmount parsedAmount={parsedAmount} parsedCurrency={parsedCurrency} href={`/items/${product.id}`} />
-              {product.shipping.free_shipping ? (
+              {product.free_shipping ? (
                 <span >
                   <ShippingImg style={{}} src={ic_shipping} />
                 </span>
@@ -24,7 +24,7 @@ const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmoun
             <ProductDescription href={`/items/${product.id}`}> {product.title} </ProductDescription>
           </CardDescription>
           <SellerContainer>
-            <SellerCity>{product.address.city_name}</SellerCity>
+            <SellerCity>{product.address_city_name}</SellerCity>
           </SellerContainer>
         </CardDetails>
       </Card>

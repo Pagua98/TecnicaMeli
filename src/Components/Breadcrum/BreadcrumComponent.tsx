@@ -1,14 +1,13 @@
 import React from 'react';
-import { Filter } from '../../Types/Breadcrum';
 import { Component } from './styles';
+import { Category } from '../../Types/SearchResult';
 
 interface Props {
-  filters: Filter[];
+  categories: Category[];
 }
 
-const BreadcrumComponent: React.FC<Props> = ({ filters }) => {
-  const categoryValues = filters.find((filter) => filter.id === 'category')?.values || [];
-  const firstCategoryValue = categoryValues[0];
+const BreadcrumComponent: React.FC<Props> = ({ categories }) => {
+  const firstCategoryValue = categories[0];
   
   return (
     <Component>

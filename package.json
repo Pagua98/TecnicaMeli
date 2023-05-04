@@ -1,6 +1,7 @@
 {
   "name": "tecnica",
   "version": "0.1.0",
+  "author": "Cristian Pagua",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,48 +1,33 @@
 import { useState } from "react";
-import { Products } from "../Types/SearchResult";
+import { Category, Products } from "../Types/SearchResult";
 import api from "../Utils/api";
 import config from "../config";
-import { ProductDetails } from "../Types/ProductDetails";
-import { Filter } from "../Types/Breadcrum";
 
 export function useProduct() {
 
     const [products, setProduct] = useState<Products[]>([]);
-    const [selectedProduct, setSelectedProduct] = useState<ProductDetails>();
+    const [selectedProduct, setSelectedProduct] = useState<Products>();
     const [productDescription, setProductDescription] = useState<string>('');
-    const [filters, setFilters] = useState<Filter[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
 
     const search = async (param: string) => {
         if (param !== '') {
             const response = await api.searchProduct(param);
-            await updateFilters(response.filters);
-            updateProduct(response.results);
+            await updateFilters(response.categories);
+            updateProduct(response.product);
         }
     };
 
     const getProductById = async (param: string) => {
         if (param !== '') {
             const response = await api.getProductById(param);
-            await setSelectedProduct(response);
-            await getProductDescription(param);
-            await getCategories();
+            setProductDescription(response.description.plain_text);
+            setSelectedProduct(response);
         }
     };
 
-    const getProductDescription = async (param: string) => {
-        if (param !== '') {
-            const response = await api.getProductDescription(param);
-            await setProductDescription(response.plain_text);
-        }
-    };
-
-    const getCategories = async () => {
-            const response = await api.getProductCategories();
-            await updateFilters(response);
-    }
-
-    const updateFilters = async (param: Filter[]) => {
-        setFilters(param);
+    const updateFilters = async (param: Category[]) => {
+        setCategories(param);
     }
 
     const updateProduct = async (list: Products[]) => {
@@ -57,13 +42,12 @@ export function useProduct() {
     return {
         search,
         getProductById,
-        getProductDescription,
         addThousandSeparators,
 
         products,
         selectedProduct,
         productDescription,
-        filters
+        categories
     };
 }
 
