@@ -11,7 +11,7 @@ import { BuyButton,
         RightContainer } from './styles';
 import { ProductDetailsProps } from '../../Types/ProductDetailsProps';
 
-const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, parsedAmount, messages, productDescription }) => {
+const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, parsedAmount, messages, productDescription, decimals }) => {
     return (
         <>
             <DetailContainer>
@@ -21,7 +21,7 @@ const SectionProductDetail: React.FC<ProductDetailsProps> = ({ selectedProduct, 
                 <RightContainer>
                     <ProductStatus soldQuantity={selectedProduct.sold_quantity} condition={selectedProduct.condition}></ProductStatus>
                     <ProductTitle>{selectedProduct.title}</ProductTitle>
-                    <ProductDetailAmount parsedAmount={parsedAmount} parsedCurrency={messages[`${selectedProduct.price.currency}`]}></ProductDetailAmount>
+                    <ProductDetailAmount parsedAmount={parsedAmount} decimals={ decimals } parsedCurrency={messages[`${selectedProduct.price.currency}`]}></ProductDetailAmount>
                     <BuyButton>{messages['buyBtnTitle']}</BuyButton>
                 </RightContainer>
             </DetailContainer>

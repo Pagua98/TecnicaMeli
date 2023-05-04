@@ -11,7 +11,7 @@ import BreadcrumComponent from "../Breadcrum/BreadcrumComponent";
 const ProductDetailsComponent = () => {
 
   const { id } = useParams();
-  const { getProductById, selectedProduct, productDescription, addThousandSeparators, categories } = useProduct();
+  const { getProductById, selectedProduct, productDescription, addThousandSeparators, categories, getDecimalPrice } = useProduct();
 
   const message: Messages[string] = uiTexts[config.defaultLanguage];
 
@@ -29,6 +29,7 @@ const ProductDetailsComponent = () => {
         {selectedProduct && (
             <SectionProductDetail selectedProduct={selectedProduct}
                             parsedAmount={addThousandSeparators(selectedProduct.price.amount)}
+                            decimals={ getDecimalPrice(selectedProduct.price.decimals) }
                             messages={message}
                             productDescription={productDescription}></SectionProductDetail>
         )}

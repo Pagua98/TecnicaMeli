@@ -5,16 +5,16 @@ import ic_shipping from '../../Assets/ic_shipping.png'
 import { AmountContainer, Card, CardDescription, CardDetails, ProductDescription, SellerCity, SellerContainer, ShippingImg } from './styles';
 import { LineSeparator } from '../Body/styles';
 
-const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmount }) => {
+const ProductCard: React.FC<CardProps> = ({ product, parsedCurrency, parsedAmount, decimals }) => {
 
   return (
     <>
-      <Card product={product} parsedCurrency={parsedCurrency} parsedAmount={parsedAmount}>
+      <Card product={product} parsedCurrency={parsedCurrency} parsedAmount={parsedAmount} decimals={decimals}>
         <CardDetails>
           <ProductImg src={product.picture} alt={product.title} href={`/items/${product.id}`} />
           <CardDescription>
             <AmountContainer>
-              <ProductAmount parsedAmount={parsedAmount} parsedCurrency={parsedCurrency} href={`/items/${product.id}`} />
+              <ProductAmount parsedAmount={parsedAmount} decimals={decimals} parsedCurrency={parsedCurrency} href={`/items/${product.id}`} />
               {product.free_shipping ? (
                 <span >
                   <ShippingImg style={{}} src={ic_shipping} />

@@ -22,6 +22,7 @@ export function useProduct() {
         if (param !== '') {
             const response = await api.getProductById(param);
             setProductDescription(response.description.plain_text);
+            updateFilters(response.categories);
             setSelectedProduct(response);
         }
     };
@@ -35,14 +36,20 @@ export function useProduct() {
     }
 
     const addThousandSeparators = (num: number): string => {
-        return num.toLocaleString(config.localeCode, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-      }
+        const integerNum = Math.floor(num);
+        return integerNum.toLocaleString(config.localeCode);
+    }
       
+    const getDecimalPrice = (decimal: number): number => {
+        const percentage = decimal * 100;
+        return percentage;
+    }
 
     return {
         search,
         getProductById,
         addThousandSeparators,
+        getDecimalPrice,
 
         products,
         selectedProduct,
